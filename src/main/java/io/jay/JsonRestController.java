@@ -12,14 +12,14 @@ public class JsonRestController {
 	
 	
 	@RequestMapping("/getJsonQuote")
-	public String sayGetJsonQuote(){
+	public Quote sayGetJsonQuote(){
 		RestTemplate restTemplate = new RestTemplate();
 	
 		String jsonUrl = "https://gturnquist-quoters.cfapps.io/api/random";
 		
 		Quote quoteObj = restTemplate.getForObject(jsonUrl, Quote.class);
 		
-		return quoteObj.toString();
+		return quoteObj;
 		
 		
 	}
